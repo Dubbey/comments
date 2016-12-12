@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>comments</name>
+	<displayName><![CDATA[My comments module]]></displayName>
+	<version><![CDATA[0.1]]></version>
+	<description><![CDATA[This module allows your customers to grade and comment you products]]></description>
+	<author><![CDATA[Dubby]]></author>
+	<tab><![CDATA[front_office_features]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
