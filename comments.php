@@ -16,7 +16,7 @@ class Comments extends Module
 
   public function getContent()
   {
-    return 'Config test.';
+    return $this->display(__FILE__,'getContent.tpl');
   }
 }
 
