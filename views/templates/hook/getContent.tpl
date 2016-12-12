@@ -35,4 +35,7 @@
       </div>
     </form>
   </div>
-</fildset>
+</fieldset>
+{if isset($confirmation)}
+  <div class="alert alert-success">Settings updated</div>
+{/if}

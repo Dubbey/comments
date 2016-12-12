@@ -29,7 +29,7 @@ class Comments extends Module
       $enable_comments = Tools::getValue('enable_comments');
       Configuration::updateValue('MYMOD_GRADES', $enable_grades);
       Configuration::updateValue('MYMOD_COMMENTS', $enable_comments);
-      
+      $this->context->smarty->assign('confirmation', 'ok');
     }
   }
 
