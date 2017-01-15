@@ -24,7 +24,7 @@ class Comments extends Module
 
   public function hookDisplayProductTabContent()
   {
-    return "<b>Display me on product page</b>";
+    return $this->display(__FILE__, 'displayProductTabContent.tpl');
   }
 
   public function getContent()
