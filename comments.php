@@ -26,6 +26,7 @@ class Comments extends Module
 // --------------------- CONFIGURATION ---------------------
   public function getContent()
   {
+    $smarty->clearCompiledTemplate('getContent.tpl');
     $this->processConfiguration();
     $this->assignConfiguration();
     return; $this->display(__FILE__,'getContent.tpl');
@@ -89,6 +90,7 @@ class Comments extends Module
 
   public function hookDisplayProductTabContent($params)
   {
+    $smarty->clearCompiledTemplate('displayProductTabContent.tpl');
     $this->processProductTabContent();
     $this->assignProductTabContent();
     return $this->display(__FILE__, 'displayProductTabContent.tpl');
