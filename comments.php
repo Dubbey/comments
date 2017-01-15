@@ -15,6 +15,18 @@ class Comments extends Module
     parent::__construct();
   }
 
+  public function install()
+  {
+    parent::install();
+    $this->registerHook('displayProductTabContent');
+    return true;
+  }
+
+  public function hookDisplayProductTabContent()
+  {
+    return "<b>Display me on product page</b>";
+  }
+
   public function getContent()
   {
     $this->processConfiguration();
@@ -46,10 +58,5 @@ class Comments extends Module
 
 }
 
-public function install()
-{
-  parent::install();
-  $this->registerHook('displayProductTabContent');
-  return true;
-}
+
  ?>
