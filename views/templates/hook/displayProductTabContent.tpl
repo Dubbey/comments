@@ -1,5 +1,13 @@
 <h3 class="page-product-heading">Product comments</h3>
 <div class="rte">
+  {foreach from=$comments item=comment}
+    <p>
+      <strong>Comment #{$comment.id_comment}:</strong>{$comment.comment}<br>
+      <strong>Grade:</strong> {$comment.grade}/5<br>
+    </p><br>
+{/foreach}
+</div>
+  <div class="rte">
   <form action="" method="POST" id="comment-form">
     <div class="form-group">
       <label for="grade">Grade:</label>
@@ -16,8 +24,7 @@
     </div>
       <div class="form-group">
         <label for="comment">Comment:</label>
-        <textarea name="comment" id="comment" class="form-control">
-        </textarea>
+        <textarea name="comment" id="comment" class="form-control"></textarea>
       </div>
       <div class="submit">
         <button type="submit" name="mymod_pc_submit_comment" class="button btn btn-default button-medium">
