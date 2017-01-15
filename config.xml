@@ -3,7 +3,7 @@
 	<name>comments</name>
 	<displayName><![CDATA[My comments module]]></displayName>
 	<version><![CDATA[0.1]]></version>
-	<description><![CDATA[This module allows your customers to grade and comment you products]]></description>
+	<description><![CDATA[This module allows your customers to grade and comment your products]]></description>
 	<author><![CDATA[Dubby]]></author>
 	<tab><![CDATA[front_office_features]]></tab>
 	<is_configurable>1</is_configurable>

@@ -10,23 +10,46 @@ class Comments extends Module
     $this->author = 'Dubby';
     $this->version= '0.1';
     $this->displayName = 'My comments module';
-    $this->description = 'This module allows your customers to grade and comment you products';
+    $this->description = 'This module allows your customers to grade and comment your products';
     $this->bootstrap = true;
     parent::__construct();
   }
-
+// --------------------- INSTALLATION ---------------------
   public function install()
   {
     parent::install();
     $this->registerHook('displayProductTabContent');
     return true;
   }
+// --------------------- END INSTALLATION ---------------------
 
+// --------------------- DISPLAY ON PRODUCT TAB ---------------------
   public function hookDisplayProductTabContent()
   {
+    $this->processProductTabContent();
     return $this->display(__FILE__, 'displayProductTabContent.tpl');
   }
 
+  public function processProductTabContent()
+  {
+    if (Tools::isSubmit('mymod_pc_submit_comment'))
+    {
+      $id_product = Tools::getValue('id_product');
+      $grade = Tools::getValue('grade');
+      $comment = Tools::getValue('comment');
+      $insert = array(
+      'id_product' => (int)$id_product,
+      'grade' => (int)$grade,
+      'comment' => pSQL($comment),
+      'date_add' => date('Y-m-d H:i:s'),
+    );
+      Db::getInstance()->insert('comment', $insert);
+    }
+  }
+
+// --------------------- END DISPLAY ON PRODUCT TAB ---------------------
+
+// --------------------- CONFIGURATION ---------------------
   public function getContent()
   {
     $this->processConfiguration();
@@ -55,7 +78,7 @@ class Comments extends Module
     $this->context->smarty->assign('enable_comments', $enable_comments);
 
   }
-
+// --------------------- END CONFIGURATION ---------------------
 }
 
 
