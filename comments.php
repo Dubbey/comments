@@ -46,4 +46,10 @@ class Comments extends Module
 
 }
 
+public function install()
+{
+  parent::install();
+  $this->registerHook('displayProductTabContent');
+  return true;
+}
  ?>
