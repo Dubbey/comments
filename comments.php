@@ -28,7 +28,7 @@ class Comments extends Module
   {
     $this->processConfiguration();
     $this->assignConfiguration();
-    return $this->display(__FILE__,'getContent.tpl');
+    return; $this->display(__FILE__,'getContent.tpl');
   }
 
   public function processConfiguration()
@@ -96,6 +96,4 @@ class Comments extends Module
 // --------------------- END DISPLAY ON PRODUCT TAB ---------------------
 
 }
-
-
  ?>

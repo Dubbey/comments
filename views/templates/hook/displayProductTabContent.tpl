@@ -5,9 +5,8 @@
       <strong>Comment #{$comment.id_comment}:</strong>{$comment.comment}<br>
       <strong>Grade:</strong> {$comment.grade}/5<br>
     </p><br>
-{/foreach}
+  {/foreach}
 </div>
-  <div class="rte">
   <form action="" method="POST" id="comment-form">
     <div class="form-group">
       <label for="grade">Grade:</label>
@@ -34,4 +33,3 @@
       </button>
     </div>
   </form>
-</div>
